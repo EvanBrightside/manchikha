@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.text :description
 
-      t.refference :catefory, null: false
+      t.integer :category_id
 
       t.timestamps
     end
