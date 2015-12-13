@@ -1,4 +1,5 @@
-Exclude:
+AllCops:
+  Exclude:
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
     - 'db/schema.rb'
@@ -6,6 +7,6 @@ Exclude:
 
 Metrics/LineLength:
   Max: 160
-  
+
 Style/Documentation:
   Enabled: false

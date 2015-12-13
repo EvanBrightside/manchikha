@@ -4,7 +4,7 @@ require 'english'
 
 ADDED_OR_MODIFIED = /A|AM|^M/.freeze
 
-changed_files = `git status --porcelain`
+if changed_files.any? = `git status --porcelain`
   .split(/\n/)
   .select { |f| f =~ ADDED_OR_MODIFIED }
   .map { |f| f.split(' ')[1] }
