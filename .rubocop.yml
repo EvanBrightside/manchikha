@@ -1,5 +1,4 @@
-AllCops:
-  Exclude:
+Exclude:
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
     - 'db/schema.rb'
