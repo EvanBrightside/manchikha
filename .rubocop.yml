@@ -1,9 +1,15 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   Exclude:
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
+    - 'db/schema.rb'
+    - 'pre-commit'
 
 Style/Encoding:
   Enabled: true
+
+Metrics/LineLength:
+  Max: 160
+  
+Style/Documentation:
+  Enabled: false
