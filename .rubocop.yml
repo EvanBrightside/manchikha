@@ -5,9 +5,6 @@ AllCops:
     - 'db/schema.rb'
     - 'pre-commit'
 
-Style/Encoding:
-  Enabled: true
-
 Metrics/LineLength:
   Max: 160
   
