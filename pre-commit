@@ -11,6 +11,6 @@ changed_files = `git status --porcelain`
   .select { |f| File.extname(f) == '.rb' }
   .join(' ')
 
-system("bundle exec rubocop #{changed_files} -a") if changed_files.any?
+system("bundle exec rubocop #{changed_files} -a") unless changed_files.empty?
 
 exit $CHILD_STATUS.to_s[-1].to_i
