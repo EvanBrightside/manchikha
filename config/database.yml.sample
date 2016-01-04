@@ -1,5 +1,3 @@
-# PostgeSQL
-
 base: &base
   adapter: postgresql
   encoding: unicode
