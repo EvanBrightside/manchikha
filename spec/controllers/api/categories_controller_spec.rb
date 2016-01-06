@@ -8,7 +8,7 @@ RSpec.describe Api::CategoriesController, type: :controller do
       {
         'id' => category.id,
         'name' => category.name,
-        'products' => [{ 'id' => product.id, 'name' => product.name }]
+        'products' => [{ 'id' => product.id, 'name' => product.name, 'thumbnail_url' => nil }]
       }
     end
 

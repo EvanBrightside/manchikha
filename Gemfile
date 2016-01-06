@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Use ActiveModel::Serializers gem for JSON serialization
 gem 'active_model_serializers'
 
+# Gem for uploading pictures
+gem 'dragonfly', '~>1.0.12'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -47,6 +50,7 @@ end
 
 group :test, :development do
   gem 'faker'
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password
