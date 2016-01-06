@@ -8,6 +8,7 @@
 #  category_id :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
+#  asset_uid   :string
 #
 # Indexes
 #
@@ -19,6 +20,8 @@
 #
 
 class Product < ActiveRecord::Base
+  dragonfly_accessor :asset
+
   belongs_to :category
 
   validates :name, :category, presence: true
