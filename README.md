@@ -1,16 +1,13 @@
 ## Requirements
-  Ruby 2.0 / http://www.ruby-lang.org / RVM / https://rvm.io
+  Ruby 2.3.0 / http://www.ruby-lang.org / RVM / https://rvm.io
 
-    curl -L https://get.rvm.io | bash -s stable
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    curl -sSL https://get.rvm.io | bash -s stable
 
-  NodeJS / http://nodejs.org / NPM / https://npmjs.org
+  NodeJS 4.2.4 / http://nodejs.org / NPM / https://npmjs.org
 
-    brew install nodejs
+    curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
     sudo apt-get install nodejs
-
-    curl https://npmjs.org/install.sh | sh
-
-    npm install -g bower
 
   PostgeSQL / www.postgresql.org
 
@@ -36,6 +33,10 @@
 
     bundle
 
+  install npm packages
+
+    cd ui && npm install && cd ..
+
   copy configs (..and edit them)
 
     cp config/database.yml.sample config/database.yml
@@ -48,6 +49,10 @@
 
     rails s
 
+  run webpack
+
+    cd ui && npm start
+
   open your browser and visit root page
 
-    http://0.0.0.0:3000
+    http://0.0.0.0:9000
