@@ -29,21 +29,13 @@
 
     cd manchikha
 
-  install gems
-
-    bundle
-
-  install npm packages
-
-    cd ui && npm install && cd ..
-
   copy configs (..and edit them)
 
     cp config/database.yml.sample config/database.yml
 
-  set up database
+  setup the app
 
-    rake db:setup
+    bin/setup
 
   run webserver
 

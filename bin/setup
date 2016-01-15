@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# Set up Rails app. Run this script immediately after cloning the codebase.
+# https://github.com/thoughtbot/guides/tree/master/protocol
+
+# Exit if any subcommand fails
+set -e
+
+# Check if NPM exists
+command -v npm >/dev/null 2>&1 || { echo >&2 "I require npm but it's not installed. Try installing node.js. Aborting."; exit 1; }
+
+# Install npm dependencies
+cd ui && npm install
+
+# Install bundler
+gem install bundler --conservative
+
+# Set up Ruby dependencies via Bundler
+bundle check || bundle install
+
+# Set up the database
+rake db:setup
