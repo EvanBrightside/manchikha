@@ -43,6 +43,8 @@ end
 group :development do
   gem 'annotate'
   gem 'rubocop', require: false
+  gem 'foreman', require: false
+  gem 'puma'
 end
 
 group :test do

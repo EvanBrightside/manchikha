@@ -37,13 +37,9 @@
 
     bin/setup
 
-  run webserver
+  run the app
 
-    rails s
-
-  run webpack
-
-    cd ui && npm start
+    foreman start
 
   open your browser and visit root page
 
