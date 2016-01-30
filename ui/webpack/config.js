@@ -57,6 +57,12 @@ var config = {
     modulesDirectories: ['node_modules', '../app', '../app/components', '../app/containers', '../app/actions', '../app/util']
   },
   devServer: {
+    proxy: {
+      '/api/*': {
+        target: 'http://0.0.0.0:3000',
+        secure: false,
+      },
+    },
     contentBase: path.resolve(pkg.config.buildDir),
     hot: true,
     noInfo: false,
