@@ -9,55 +9,58 @@ var jsxLoader;
 var cssLoader;
 var fileLoader = 'file-loader?name=[path][name].[ext]';
 var htmlLoader = [
-  'file-loader?name=[path][name].[ext]',
-  'template-html-loader?' + [
-    'raw=true',
-    'engine=lodash',
-    'version=' + pkg.version,
-    'title=' + pkg.name,
-    'debug=' + DEBUG
-  ].join('&')
+    'file-loader?name=[path][name].[ext]',
+    'template-html-loader?' + [
+        'raw=true',
+        'engine=lodash',
+        'version=' + pkg.version,
+        'title=' + pkg.name,
+        'debug=' + DEBUG
+    ].join('&')
 ].join('!');
 
 if (DEBUG || TEST) {
-  jsxLoader = [];
-  if (!TEST) {
-    jsxLoader.push('react-hot');
-  }
-  jsxLoader.push('babel-loader?optional=runtime');
-  cssLoader = [
-    'style-loader',
-    'css-loader?sourceMap',
-    'postcss-loader'
-  ].join('!');
+    jsxLoader = [];
+    if (!TEST) {
+        jsxLoader.push('react-hot');
+    }
+    jsxLoader.push('babel-loader?optional=runtime');
+    cssLoader = [
+        'style-loader',
+        'css-loader?sourceMap',
+        'postcss-loader'
+    ].join('!');
 } else {
-  jsxLoader = ['babel-loader?optional=runtime'];
-  cssLoader = ExtractTextPlugin.extract('style-loader', [
-    'css-loader',
-    'postcss-loader'
-  ].join('!'));
+    jsxLoader = ['babel-loader?optional=runtime'];
+    cssLoader = ExtractTextPlugin.extract('style-loader', [
+        'css-loader',
+        'postcss-loader'
+    ].join('!'));
 }
 
 var loaders = [{
-  test: /\.jsx?$/,
-  exclude: /node_modules/,
-  loaders: jsxLoader
+    test: /\.jsx?$/,
+    exclude: /node_modules/,
+    loaders: jsxLoader
 }, {
-  test: /\.css$/,
-  loader: cssLoader
+    test: /\.css$/,
+    loader: cssLoader
 }, {
-  test: /\.(jpe?g|gif|png|ico|otf|eot|svg|ttf|woff2?)(\?.+|$)/,
-  loader: fileLoader
+    test: /\.(jpe?g|gif|png|ico|otf|eot|svg|ttf)(\?.+|$)/,
+    loader: fileLoader
 }, {
-  test: /\.json$/,
-  exclude: /node_modules/,
-  loaders: 'json-loader'
+    test: /\.json$/,
+    exclude: /node_modules/,
+    loaders: 'json-loader'
 }, {
-  test: /\.html$/,
-  loader: htmlLoader
+    test: /\.html$/,
+    loader: htmlLoader
 }, {
-  test: /\.styl$/,
-  loader: 'style-loader!css-loader!postcss-loader!'
+    test: /\.styl$/,
+    loader: 'style!css-loader!postcss-loader!'
+}, {
+    test: /\.(woff|woff(2))(\?v=\d+\.\d+\.\d+)?$/,
+    loader: 'url?mimetype=application/font-woff'
 }];
 
 module.exports = loaders;

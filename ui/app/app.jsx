@@ -1,8 +1,23 @@
 import 'babel-core/polyfill';
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
 
 import './index.html';
-import CategoriesPage from 'CategoriesPage.jsx';
+import './css/app.css';
 
-ReactDOM.render(<CategoriesPage />, document.getElementById('app'));
+import MainMenu from 'MainMenu.jsx';
+import News from 'NewsPage.jsx';
+import CategoriesPage from 'CategoriesPage.jsx';
+import About from 'AboutPage.jsx';
+
+render((
+    <Router history={ browserHistory }>    
+        <Route path='/' component={ MainMenu }>
+            <Route path='/news' component={ News }/>
+            <Route path='/products' component={ CategoriesPage }/>
+            <Route path='/about' component={ About }/>
+        </Route>
+    </Router>
+), document.getElementById('app'));

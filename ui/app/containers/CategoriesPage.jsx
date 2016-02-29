@@ -17,4 +17,4 @@ export default class CategoriesPage extends React.Component {
     render() {
         return <CategoriesList categories={this.state.categories} />;
     }
-};
+}
