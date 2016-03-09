@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
 import './index.html';
+import 'normalize.css/normalize.css';
 import './css/app.css';
 
 import MainMenu from 'MainMenu.jsx';
@@ -13,7 +14,7 @@ import CategoriesPage from 'CategoriesPage.jsx';
 import About from 'AboutPage.jsx';
 
 render((
-    <Router history={ browserHistory }>    
+    <Router history={ browserHistory }>
         <Route path='/' component={ MainMenu }>
             <Route path='/news' component={ News }/>
             <Route path='/products' component={ CategoriesPage }/>
