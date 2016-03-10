@@ -1,1 +1,11 @@
-
+.category { 
+  float: left;
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+  padding-top: 10px;
+  width: 200px;
+  height: 90px;
+  margin-right: 20px;
+  text-align: center;
+}

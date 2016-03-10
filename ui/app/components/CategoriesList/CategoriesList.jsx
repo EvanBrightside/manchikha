@@ -8,9 +8,12 @@ export default class CategoriesList extends React.Component {
             <Category name={category.name} key={category.id} />
         ));
         return (
-            <div className="categoryList">
-                {categoryNodes}
+            <div>
+                <h2>Вещи</h2>
+                <div className="categoryList">
+                    {categoryNodes}
+                </div>
             </div>
         );
-    };
-};
+    }
+}

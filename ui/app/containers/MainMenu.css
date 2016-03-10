@@ -1,0 +1,139 @@
+.page {
+  overflow: hidden;
+  min-width: 840px;
+  height: 70%;
+  padding: 20px 0;
+}
+
+.section-left {
+  float: left;
+  width: 20%;
+  min-width: 168px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.section-right {
+  float: right;
+  width: 80%;
+  min-width: 672px;
+  box-sizing: border-box;
+  padding: 0 20px 0 10px;
+}
+
+.logo {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.logo-header {  
+  height: 40px;
+  margin: 0;
+  line-height: 60px;
+}
+
+.logo-header-link {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 100%;
+ }
+
+.logo-div {
+  background-color: white;
+  border-radius: 50%;
+  height: 148px;
+  width: 148px;
+  display: block;
+  margin: 20px auto;
+}
+
+.logo-div-img {
+  display: inline-block;
+  border-radius: 50%;
+  height: 90%;
+  width: 90%;
+  line-height: 80px;
+  margin: auto;
+}
+
+.moto, .location {
+
+}
+
+.social {
+  width: 100%;
+  padding-left: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+.social-a {
+  background: white;
+  color: black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  line-height: 60px;
+  margin: 5px;
+}
+
+.nav {
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-li {
+  float: left;
+}
+
+.nav-a {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  background-color: white;
+  height: 40px;
+  width: 200px;
+  line-height: 40px;
+  margin-left: 20px;
+  font-size: 1.2em;
+}
+
+.nav-a:hover, .active {
+  color: white;
+  background-color: black;
+}
+
+.nav-a-first {
+  margin-left: 0;
+}
+
+.container {
+  background-color: white;
+  overflow: hidden;
+  height: 600px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.content {
+  float: left;
+  color: black;
+}
+
+.contact {
+  background-color: white;
+  color: black;
+  height: 50px;
+}
+
+.contact-p {
+  margin-right: 20px;
+  text-align: right;
+}
