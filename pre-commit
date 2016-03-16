@@ -2,13 +2,22 @@
 
 ADDED_OR_MODIFIED = /A|AM|^M/.freeze
 
-changed_files = `git status --porcelain`
-  .split(/\n/)
-  .select { |f| f =~ ADDED_OR_MODIFIED }
-  .map { |f| f.split(' ')[1] }
-  .select { |f| File.extname(f) == '.rb' }
-  .join(' ')
+changed_files = {}
 
-system("bundle exec rubocop #{changed_files} -a") unless changed_files.empty?
+changed_files[:all] = `git status --porcelain`
+                        .split(/\n/)
+                        .select { |f| f =~ ADDED_OR_MODIFIED }
+                        .map { |f| f.split(' ')[1] }
+
+changed_files[:rb]  = changed_files[:all]
+                        .select { |f| File.extname(f) == '.rb' }
+                        .join(' ')
+
+changed_files[:js]  = changed_files[:all]
+                        .select { |f| File.extname(f) == '.js' || File.extname(f) == '.jsx' }
+                        .join(' ')
+
+system("bundle exec rubocop #{changed_files[:rb]} -a") unless changed_files[:rb].empty?
+system("ui/node_modules/.bin/eslint #{changed_files[:js]}") unless changed_files[:js].empty?
 
 exit $?.to_s[-1].to_i
