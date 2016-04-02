@@ -6,10 +6,14 @@ import '../images/logo.png';
 
 export default class MainMenu extends React.Component {
     render() {
+        const pathName = this.props.location.pathname;
+        const newsClass = (pathName === '/' || pathName.match(/^\/news/)) ? ' active' : '';
+        const productsClass = pathName.match(/^\/products/) ? ' active' : '';
+
         return (
             <div className='page'>
                 <section className='section-left'>
-                    <header className='logo'>                        
+                    <header className='logo'>
                         <h1 className='logo-header'><Link to='/' className='logo-header-link'>Manchikha</Link></h1>
                         <div className='logo-div'>
                             <Link to='/' title='Manchikha'><img className='logo-div-img' src='images/logo.png' alt='Manchikha!' /></Link>
@@ -29,8 +33,8 @@ export default class MainMenu extends React.Component {
                     <header className='section-right-header'>
                         <nav>
                             <ul className='nav'>
-                                <li className='nav-li'><Link to='/news' className='nav-a nav-a-first' activeClassName='active'>Новости</Link></li>
-                                <li className='nav-li'><Link to='/products' className='nav-a' activeClassName='active'>Вещи</Link></li>
+                                <li className='nav-li'><Link to='/news' className={'nav-a nav-a-first' + newsClass}>Новости</Link></li>
+                                <li className='nav-li'><Link to='/products' className={'nav-a' + productsClass}>Вещи</Link></li>
                                 <li className='nav-li'><Link to='/about' className='nav-a' activeClassName='active'>О нас</Link></li>
                             </ul> 
                         </nav>

@@ -5,7 +5,7 @@ import CategoriesList from 'CategoriesList/CategoriesList.jsx';
 export default class CategoriesPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {categories: []};
+        this.state = {};
     }
 
     componentDidMount() {
@@ -15,6 +15,9 @@ export default class CategoriesPage extends React.Component {
     }
 
     render() {
-        return <CategoriesList categories={this.state.categories} />;
+        if (this.state.categories) {
+            return <CategoriesList categories={this.state.categories} />;
+        }
+        return <div>Loading...</div>;
     }
 }
