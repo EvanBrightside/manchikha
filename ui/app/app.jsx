@@ -2,7 +2,7 @@ import 'babel-core/polyfill';
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import './index.html';
 import 'normalize.css/normalize.css';
@@ -16,6 +16,7 @@ import About from 'AboutPage.jsx';
 render((
     <Router history={ browserHistory }>
         <Route path='/' component={ MainMenu }>
+            <IndexRoute component={ News } />
             <Route path='/news' component={ News }/>
             <Route path='/products' component={ CategoriesPage }/>
             <Route path='/about' component={ About }/>
