@@ -10,7 +10,8 @@ import './css/app.css';
 
 import MainMenu from 'MainMenu.jsx';
 import News from 'NewsPage.jsx';
-import CategoriesPage from 'CategoriesPage.jsx';import About from 'AboutPage.jsx';
+import CategoriesPage from 'CategoriesPage.jsx';
+import About from 'AboutPage.jsx';
 
 render((
     <Router history={ browserHistory }>
@@ -18,7 +19,7 @@ render((
             <IndexRoute component={ News }/>
             <Route path='/news' component={ News }/>
             <Route path='/products' component={ CategoriesPage }/>
-            <Route path='/products/:categoryId' component={ ProductsPage }/>
+            <Route path='/products/:categoryId' component={ CategoriesPage }/>
             <Route path='/about' component={ About }/>
         </Route>
     </Router>
