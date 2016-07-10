@@ -10,9 +10,7 @@ import './css/app.css';
 
 import MainMenu from 'MainMenu.jsx';
 import News from 'NewsPage.jsx';
-import CategoriesPage from 'CategoriesPage.jsx';
-import ProductsPage from 'ProductsPage.jsx';
-import About from 'AboutPage.jsx';
+import CategoriesPage from 'CategoriesPage.jsx';import About from 'AboutPage.jsx';
 
 render((
     <Router history={ browserHistory }>

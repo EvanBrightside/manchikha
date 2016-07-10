@@ -6,7 +6,7 @@ export default class Product extends React.Component {
         return (
             <div className='product'>
                 <div className='product-photo'>
-                    <img src='' title={this.props.name} />
+                    <img src={this.props.thumbnail_url} title={this.props.name} />
                 </div>
                 <div className='product-description'>{this.props.name}</div>
             </div>
