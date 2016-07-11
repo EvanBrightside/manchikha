@@ -4,10 +4,10 @@ import CategoriesList from 'CategoriesList/CategoriesList.jsx';
 
 export default class CategoriesPage extends React.Component {
 	constructor(props) {
-    super(props);
-    this.state = {
-    	categories: [],
-    	currentCategory: { products: [] }
+		super(props);
+		this.state = {
+		categories: [],
+    		currentCategory: { products: [] }
 		};
   }
 
